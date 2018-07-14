@@ -10,7 +10,9 @@ public class DeleteScript : MonoBehaviour {
     public GameController gameController;
     public SaveMetaData saveMetaData;
     public GameObject txt;
-
+    public Transform gm;
+    Vector3 pos;
+    public randomInstance randomInstance;
 
 
 
@@ -27,6 +29,7 @@ public class DeleteScript : MonoBehaviour {
 
     public void appendNew()
     {
+        check();
         Debug.Log("bugaga");
     }
 
@@ -47,19 +50,34 @@ public class DeleteScript : MonoBehaviour {
         }
     }
 
-    void check()
+    public void check()
     {
+        Debug.Log(saveMetaData.data.Length);
         for (int i = 0; i < saveMetaData.data.Length; i++)
         {
             if (saveMetaData.str == saveMetaData.data[i])
             {
-                Debug.Log("it's work!");
+                Debug.Log("work");
+                if(saveMetaData.str == "HHO")
+                {
+                    pos = randomInstance.center + new Vector3(Random.Range(-randomInstance.size.x / 2, randomInstance.size.x / 2), randomInstance.size.y, Random.Range(-randomInstance.size.z / 2, randomInstance.size.z / 2));
+                    Debug.Log(saveMetaData.str);
+                    Instantiate(gameObjects[0],pos,Quaternion.identity);
+                }
+                else if(saveMetaData.str == "CHHHH")
+                {
+                    pos = randomInstance.center + new Vector3(Random.Range(-randomInstance.size.x / 2, randomInstance.size.x / 2), randomInstance.size.y, Random.Range(-randomInstance.size.z / 2, randomInstance.size.z / 2));
+                    Instantiate(gameObjects[1], pos, Quaternion.identity);
+                }
+            }
+            else
+            {
+                Debug.Log("nope");
             }
         }
     }
 
     void checkIt()
     {
-
     }
 }
