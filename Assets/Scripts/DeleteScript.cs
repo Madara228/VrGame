@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeleteScript : MonoBehaviour {
     [SerializeField]
@@ -10,9 +11,7 @@ public class DeleteScript : MonoBehaviour {
     public GameController gameController;
     public SaveMetaData saveMetaData;
     public GameObject txt;
-    public Transform gm;
-    Vector3 pos;
-    public randomInstance randomInstance;
+    public Transform gObj;
 
 
 
@@ -24,13 +23,41 @@ public class DeleteScript : MonoBehaviour {
     }
     public  void omClick()
     {
+       
         delete();
     }
 
     public void appendNew()
     {
-        check();
+       // Instantiate(gameObjects[0], gObj.position, Quaternion.identity);
         Debug.Log("bugaga");
+        Debug.Log(saveMetaData.data.Length);
+        for (int i = 0; i < saveMetaData.data.Length; i++)
+        {
+            if (saveMetaData.str == saveMetaData.data[i])
+            {
+                Debug.Log("work");
+                if (saveMetaData.str == "HHO")
+                {
+                    Debug.Log(saveMetaData.str);
+                    Instantiate(gameObjects[0], gObj.transform.position, Quaternion.identity);
+                    saveMetaData.str += "HHO";
+                }
+                else if (saveMetaData.str == "CHHHH")
+                {
+                    saveMetaData.str += "CHHHH";
+                    Instantiate(gameObjects[1], gObj.transform.position, Quaternion.identity);
+                }
+            }
+                else
+                {
+                    saveMetaData.str += "else";
+                    Debug.Log("nope");
+                }
+        }
+
+        saveMetaData.new_txt.text += "WOR";
+
     }
 
     public void delete()
@@ -50,34 +77,5 @@ public class DeleteScript : MonoBehaviour {
         }
     }
 
-    public void check()
-    {
-        Debug.Log(saveMetaData.data.Length);
-        for (int i = 0; i < saveMetaData.data.Length; i++)
-        {
-            if (saveMetaData.str == saveMetaData.data[i])
-            {
-                Debug.Log("work");
-                if(saveMetaData.str == "HHO")
-                {
-                    pos = randomInstance.center + new Vector3(Random.Range(-randomInstance.size.x / 2, randomInstance.size.x / 2), randomInstance.size.y, Random.Range(-randomInstance.size.z / 2, randomInstance.size.z / 2));
-                    Debug.Log(saveMetaData.str);
-                    Instantiate(gameObjects[0],pos,Quaternion.identity);
-                }
-                else if(saveMetaData.str == "CHHHH")
-                {
-                    pos = randomInstance.center + new Vector3(Random.Range(-randomInstance.size.x / 2, randomInstance.size.x / 2), randomInstance.size.y, Random.Range(-randomInstance.size.z / 2, randomInstance.size.z / 2));
-                    Instantiate(gameObjects[1], pos, Quaternion.identity);
-                }
-            }
-            else
-            {
-                Debug.Log("nope");
-            }
-        }
-    }
-
-    void checkIt()
-    {
-    }
+    
 }

@@ -12,7 +12,8 @@ public class SaveMetaData : MonoBehaviour {
 
     private void Start()
     {
-        data = File.ReadAllLines("C:/Users/karag/Documents/VR/Assets/str.txt");
+        //data = File.ReadAllLines("C:/Users/karag/Documents/VR/Assets/str.txt");
+
     }
     private void Update()
     {
