@@ -11,12 +11,14 @@ public class MovingScript : MonoBehaviour {
     public float speed = 3f;
 
     public bool moveForward;
+    public AudioSource source;
 
     private CharacterController cc;
 
 
 	void Start () {
         cc = GetComponent<CharacterController>();
+        source = GetComponent<AudioSource>();
 	}
 	
 	
@@ -28,12 +30,13 @@ public class MovingScript : MonoBehaviour {
         else
         {
             moveForward = false;
+            source.Play();
         }
         if (moveForward)
         {
             Vector3 forward = camera.TransformDirection(Vector3.forward);
-
             cc.SimpleMove(forward * speed);
+            
         }
 	}
 }
