@@ -41,10 +41,30 @@ public class DeleteScript : MonoBehaviour {
                 {
                     Debug.Log(saveMetaData.str);
                     Instantiate(gameObjects[0], gObj.transform.position, Quaternion.identity);
+                    GameObject gObj_chhh = GameObject.Find("chhhh(Clone)");
+                    if (gObj_chhh != null)
+                    {
+                        Destroy(gObj_chhh);
+                        Debug.Log("destroed");
+                    }
+                    else
+                    {
+                        Debug.Log("not_destroyed");
+                    }
                 }
                 else if (saveMetaData.str == "CHHHH")
                 {
                     Instantiate(gameObjects[1], gObj.transform.position, Quaternion.identity);
+                    GameObject gObj_chhh = GameObject.Find("HHO(Clone)");
+                    if (gObj_chhh != null)
+                    {
+                        Destroy(gObj_chhh);
+                        Debug.Log("destroed");
+                    }
+                    else
+                    {
+                        Debug.Log("not_destroyed");
+                    }
                 }
             }
                 else
