@@ -7,13 +7,14 @@ public class SaveMetaData : MonoBehaviour {
 
     public Text new_txt;
     public string str;
-    public string[] data;
+    public List<string> data = new List<string>();
 
 
     private void Start()
     {
         //data = File.ReadAllLines("C:/Users/karag/Documents/VR/Assets/str.txt");
-
+        data.Add("HHO");
+        data.Add("CHHHH");
     }
     private void Update()
     {

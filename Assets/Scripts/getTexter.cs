@@ -34,7 +34,7 @@ public class getTexter : MonoBehaviour {
 
     void check()
     {
-        for (int i = 0; i < saveMetaData.data.Length; i++)
+        for (int i = 0; i < saveMetaData.data.Count; i++)
         {
             if (saveMetaData.str == saveMetaData.data[i])
             {
