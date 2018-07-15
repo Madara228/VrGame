@@ -17,4 +17,12 @@ public class SceneManagement : MonoBehaviour {
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void newScenePhys()
+    {
+        SceneManager.LoadScene("PhysScene");
+    }
+    public void newScene()
+    {
+        SceneManager.LoadScene("Biolog");
+    }
 }
