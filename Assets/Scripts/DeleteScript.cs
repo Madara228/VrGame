@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +19,6 @@ public class DeleteScript : MonoBehaviour {
     {
         txt = GameObject.Find("NewUIText");
         saveMetaData = txt.GetComponent<SaveMetaData>();
-
     }
     public  void omClick()
     {
@@ -77,6 +76,7 @@ public class DeleteScript : MonoBehaviour {
 
     public void delete()
     {
+    	
         Debug.Log(gameController.strs.Count + "./////////////////////////");
         gameController.strs.RemoveAt(gameController.strs.Count - 1);
         Debug.Log(gameController.strs.Count + "..................................");
